@@ -82,6 +82,7 @@ mo_opme(struct Client *source_p, int parc, char *parv[])
     return 0;
   }
 
+/*  
   DLINK_FOREACH(node, chptr->members.head)
   {
     if (((struct Membership *)node->data)->flags & CHFL_CHANOP)
@@ -91,6 +92,7 @@ mo_opme(struct Client *source_p, int parc, char *parv[])
       return 0;
     }
   }
+*/
 
   ilog(LOG_TYPE_IRCD, "%s used OPME on channel %s",
        get_oper_name(source_p), chptr->name);

@@ -1,0 +1,15 @@
+*.o
+*.la
+*.lo
+Makefile
+.deps/
+.libs/
+config.h
+config.log
+config.status
+libtool
+.dirstamp
+src/ircd
+stamp-h1
+tools/mkpasswd
+lt__argz.h

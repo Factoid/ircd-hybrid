@@ -1029,6 +1029,7 @@ channel_do_join(struct Client *client_p, char *channel, char *key_list)
     if (!HasUMode(client_p, UMODE_OPER))
       check_spambot_warning(client_p, chptr->name);
 
+    flags |= CHFL_VOICE;
     add_user_to_channel(chptr, client_p, flags, 1);
 
     /*

@@ -339,7 +339,7 @@ read_packet(fde_t *fd, void *data)
 
     if (IsDefunct(client_p))
       return;
-
+      
     /* Check to make sure we're not flooding */
 /*
     if (!(IsServer(client_p) || IsHandshake(client_p) || IsConnecting(client_p)) &&
@@ -351,7 +351,6 @@ read_packet(fde_t *fd, void *data)
     }
 */
   } while (length == sizeof(readBuf) || tls_isusing(&fd->ssl));
-
   /* If we get here, we need to register for another COMM_SELECT_READ */
   comm_setselect(fd, COMM_SELECT_READ, read_packet, client_p, 0);
 }

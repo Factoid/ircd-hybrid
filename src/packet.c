@@ -341,6 +341,7 @@ read_packet(fde_t *fd, void *data)
       return;
 
     /* Check to make sure we're not flooding */
+/*
     if (!(IsServer(client_p) || IsHandshake(client_p) || IsConnecting(client_p)) &&
         (dbuf_length(&client_p->connection->buf_recvq) >
          get_recvq(&client_p->connection->confs)))
@@ -348,6 +349,7 @@ read_packet(fde_t *fd, void *data)
       exit_client(client_p, "Excess Flood");
       return;
     }
+*/
   } while (length == sizeof(readBuf) || tls_isusing(&fd->ssl));
 
   /* If we get here, we need to register for another COMM_SELECT_READ */
